@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Dashboard Pemetaan Kekeringan DS 2024</title>
+
+    <!-- Feather Icons-->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/home.css" />
+  </head>
+
+  <body>
+    <!--Navigasi Bar-->
+    <nav class="navbar">
+      <img src="images/stis.png" alt="" />
+      <a href="#" class="logo">
+        Dashboard Pemetaan Kekeringan Kabupaten Deli Serdang Tahun 2024</a
+      >
+
+      <div class="navbar-extra">
+        <a href="#" id="menu2"><i data-feather="search"></i></a>
+      </div>
+      <div class="navbar-extra">
+        <a href="#" id="menu2"><i data-feather="search"></i></a>
+      </div>
+      <div class="navbar-extra">
+        <a href="#" id="menu2"><i data-feather="search"></i></a>
+      </div>
+
+      <div class="nav">
+        <a href="index.html">Beranda</a>
+        <a href="peta.html">Hasil Pemetaan</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="menu1"><i data-feather="menu"></i></a>
+      </div>
+    </nav>
+
+    <!-- Section -->
+    <article class="hero" id="hero">
+      <div class="content">
+        <h1>
+          Selamat Datang di Dashboard Pemetaan Wilayah Kekeringan Kabupaten Deli
+          Serdang Tahun 2024
+        </h1>
+        <div class="desc">
+          <p>
+            Kekeringan merupakan fenomena alam yang terjadi akibat kurangnya
+            curah hujan dari tingkat normal, sehingga mengakibatkan kekurangan
+            air untuk memenuhi kebutuhan manusia dan lingkungan. Kekeringan
+            terjadi secara berkala dengan durasi dan tingkat keparahan yang
+            bervariasi, bergantung pada wilayah dan daerah. Hal tersebut dapat
+            mengancam berbagai aspek kehidupan dan ekosistem alam yang berisiko
+            menyebabkan kemunduran dan degradasi tanah, kelangkaan air,
+            penggurunan, perusakan vegetasi, badai pasir, kebakaran hutan,
+            penurunan produktivitas tanaman pangan, dan fenomena bencana
+            lainnya. Oleh karena itu, <span>dashboard</span> ini dibangun untuk
+            membantu pemerintah daerah dalam memantau kekeringan di Kabupaten
+            Deli Serdang tahun 2024 serta melakukan upaya mitigasi yang efektif
+            dan tepat waktu. Visualisasi spasial berupa pemetaan wilayah
+            kekeringan pada <span>dashboard</span> ini merupakan hasil prediksi
+            kekeringan berbasis <span>in situ</span> dan
+            <span>remote sensing</span> menggunakan algoritma
+            <span>deep learning</span> yaitu
+            <span>Convolutional Long Short-Term Memory</span>.
+          </p>
+        </div>
+        <!-- <div class="tagline">
+          Ayoo Berikan Hadiah Terbaikmu Pada Orang Spesial di Momen Spesialnya!
+        </div> -->
+        <a href="peta.html" class="map">Lihat Peta</a>
+      </div>
+    </article>
+
+    <!-- Isi -->
+    <div class="isi">
+      <h1>Indeks Kekeringan</h1>
+    </div>
+    <div class="fitur">
+      <p>
+        Variabel yang digunakan dalam prediksi kekeringan terdiri dari 6
+        variabel independen dan 1 variabel dependen. Variabel independen yang
+        digunakan yaitu indeks kekeringan tunggal berbasis
+        <span>remote sensing</span> (VCI, TCI, PCI, SMCI) dan indeks kekeringan
+        gabungan (SDI, OMDI). Sementara itu, variabel dependen yang digunakan
+        merupakan indeks kekeringan tunggal berbasis <span>in situ</span> yaitu
+        SPI. Indeks kekeringan tunggal berbasis
+        <span>remote sensing</span> diperoleh melalui ekstraksi data citra
+        satelit dengan pendekatan piksel 500 x 500m untuk setiap desa/kelurahan,
+        sedangkan indeks kekeringan tunggal berbasis
+        <span>in situ</span> diperoleh melalui data <span>in situ</span> berupa
+        curah hujan yang berasal dari tiga stasiun pengamatan Badan Meteorologi,
+        Klimatologi, dan Geofisika (BMKG) di Kabupaten Deli Serdang. Data yang
+        digunakan dalam pembangunan model prediksi dikumpulkan dalam rentang
+        waktu 1 Janurari hingga 31 Desember 2022. Berikut penjelasan mengenai
+        masing-masing indeks kekeringan tersebut.
+      </p>
+      <div class="fitur1">
+        <div class="desc">
+          <h3>1. Vegetation Condition Index (VCI)</h3>
+          <p>
+            <span>Vegetation Condition Index</span> (VCI) merupakan indeks
+            vegetasi yang diperoleh melalui perbandingan nilai NDVI pada periode
+            tertentu dengan nilai NDVI maksimum dan minimum pada periode
+            keseluruhan. NDVI merupakan salah satu <span>band</span> yang
+            terdapat pada produk MOD13A1. VCI menormalisasi NDVI dan memisahkan
+            sinyal ekologis jangka panjang dari sinyal iklim jangka pendek dan
+            dalam pengertian ini terbukti menjadi indikator yang lebih baik
+            untuk memantau kondisi stres air dibandingkan dengan NDVI.
+          </p>
+        </div>
+      </div>
+
+      <div class="fitur2">
+        <div class="desc">
+          <h3>2. Temperature Condition Index (TCI)</h3>
+          <p>
+            <span>Temperature Condition Index</span> (TCI) merupakan indikator
+            tekanan termal berbasis <span> remote sensing</span> yang digunakan
+            untuk mengukur tekanan air pada vegetasi sebagai akibat dari
+            temperatur permukaan tanah yang meningkat. TCI dihitung berdasarkan
+            data citra satelit yang diperoleh dari MOD11A2. Penghitungan TCI
+            melibatkan nilai <span>Land Surface Temperature</span> (LST) yaitu
+            suhu permukaan tanah yang telah melalui proses
+            <span>smoothing</span> selama delapan hari, nilai LST maksimum dan
+            minimum dalam skala bulanan.
+          </p>
+        </div>
+      </div>
+
+      <div class="fitur3">
+        <div class="desc">
+          <h3>3. Precipitation Condition Index (PCI)</h3>
+          <p>
+            <span>Precipitation Condition Index</span> (PCI) merupakan indeks
+            kekeringan yang dinormalisasi menggunakan data CHIRPS. Indeks
+            tersebut dihitung untuk menjelaskan defisit curah hujan selama suatu
+            periode dari sinyal iklim. Nilai piksel curah hujan CHIRPS, CHIRPS
+            maksimum, dan CHIRPS minimum, masing-masing dihitung berdasarkan
+            skala bulanan. Nilai PCI yang semakin tinggi mengindikasikan
+            frekuensi curah hujan yang semakin tinggi pula.
+          </p>
+        </div>
+      </div>
+
+      <div class="fitur4">
+        <div class="desc">
+          <h3>4. Soil Moisture Condition Index (SMCI)</h3>
+          <p>
+            <span>Soil Moisture Condition Index</span> (SMCI) adalah indeks yang
+            digunakan untuk menunjukkan ketersediaan kelembaban tanah dengan
+            mempertimbangkan nilai NDVI dan
+            <span>Land Surface Temperature</span> (LST). SMCI melibatkan nilai
+            <span>Soil Moisture</span> (SM) yang berasal dari
+            <span>Global Land Data Assimilation System </span> (GLDAS). Nilai SM
+            yang dinormalisasi akan menghasilkan SMCI dengan nilai berkisar 0
+            hingga 100 sesuai dengan perubahan SM dari sangat kering atau kurang
+            baik menjadi sangat basah atau kondisi ideal. Nilai SM maksimum dan
+            SM minimum merupakan nilai maksimum dan minimum absolut yang
+            didasarkan pada skala bulanan.
+          </p>
+        </div>
+      </div>
+      <div class="fitur4">
+        <div class="desc">
+          <h3>5. Synthesized Drought Index (SDI)</h3>
+          <p>
+            <span>Synthesized Drought Index</span> (SDI) didefinisikan sebagai
+            komponen utama dari indeks vegetasi (VCI), indeks suhu (TCI), dan
+            indeks curah hujan (PCI). SDI merupakan indeks kekeringan gabungan
+            yang mengintegrasikan data <span>remote sensing</span>dari berbagai
+            sumber, seperti MODIS dan CHIRPS. Selain itu, SDI juga digunakan
+            sebagai indikator kekeringan pertanian untuk mengamati karakteristik
+            kekeringan spasial temporal pertanian. Indeks tersebut menyintesis
+            defisit curah hujan, tekanan termal tanah, dan kondisi pertumbuhan
+            vegetasi dalam proses pemantauan kekeringan. Proses pembentukan SDI
+            melibatkan metode analisis komponen utama atau
+            <span>Principal Component Analysis</span> (PCA). Metode tersebut
+            digunakan untuk mengesktrak informasi utama dari PCI, VCI, dan TCI.
+            Oleh karena itu, SDI dinilai sangat cocok untuk memantau kekeringan
+            secara komprehensif. Di samping itu,
+          </p>
+        </div>
+      </div>
+      <div class="fitur4">
+        <div class="desc">
+          <h3>6. Optimized Meteorological Drought Index (OMDI)</h3>
+          <p>
+            <span>Optimized Meteorological Drought Index</span> (OMDI) merupakan
+            indeks kekeringan gabungan berbasis gelombang mikro multisensor pada
+            <span>remote sensing</span>. Indeks tersebut digunakan untuk
+            menganalisis tren kekeringan meteorologi spasial temporal. OMDI
+            mengintegrasikan beberapa indeks kekeringan tunggal, seperti TCI,
+            PCI, dan SMCI menggunakan
+            <span>Constrained Optimization Method</span> atau metode optimasi
+            terbatas untuk menyempurnakan parameter variabel penginderaan jauh.
+            Proses ini dilakukan melalui penggabungan variabel-variabel tersebut
+            dengan memaksimalkan korelasi terhadap indeks
+            <span>in situ</span> yaitu SPI atau SPEI sebagai data referensi.
+          </p>
+        </div>
+      </div>
+      <div class="fitur4">
+        <div class="desc">
+          <h3>7. Standardized Precipitation Index (SPI)</h3>
+          <p>
+            <span>Standardized Precipitation Index</span> (SPI) merupakan
+            indikator yang merepresentasikan probabilitas terjadinya curah hujan
+            dalam periode waktu tertentu di suatu wilayah. Indikator ini
+            memiliki keunggulan berupa perhitungan yang sederhana, stabilitas
+            yang baik, serta kemampuannya menghilangkan perbedaan temporal dan
+            spasial pada data curah hujan. SPI sensitif terhadap perubahan
+            kekeringan dan cocok digunakan untuk pemantauan kekeringan serta
+            penilaian kondisi iklim pada skala waktu bulanan atau lebih.
+            Penghitungan SPI melibatkan curah hujan bulanan dengan distribusi
+            <span>gamma</span> yang bertujuan untuk menganalisis defisit curah
+            hujan pada rentang waktu yang berbeda.
+          </p>
+        </div>
+      </div>
+      <img src="images/klasifikasi.png" alt="" />
+      <img src="images/visual.png" alt="" />
+    </div>
+
+    <div class="isi">
+      <h1>
+        Model Prediksi (<span>Convolutional Long Short-Term Memory</span>)
+      </h1>
+    </div>
+    <div class="fitur">
+      <p>
+        Pembangunan model ConvLSTM dilakukan dengan menggunakan dua dataset
+        untuk perbandingan. Dataset pertama hanya terdiri dari indeks kekeringan
+        tunggal berbasis <span>remote sensing</span> (VCI, TCI, PCI, SMCI)
+        sebagai variabel independen, sedangkan dataset kedua terdiri dari indeks
+        kekeringan tunggal berbasis <span>remote sensing</span> (VCI, TCI, PCI,
+        SMCI) dan indeks kekeringan gabungan (SDI, OMDI) sebagai variabel
+        independen. Masing-masing dataset terdiri dan 10.383 baris. Pembagian
+        data menjadi data latih, data uji, dan data validasi dalam pembangunan
+        model masing-masing menggunakan proporsi 80%, 10%, dan 10%. Hasilnya
+        adalah data latih terdiri dari 8.306 baris, data uji terdiri dari 1.038
+        baris, dan data validasi terdiri dari 1.039 baris. Arsitektur model
+        ConvLSTM yang kembangkan oleh peneliti menerapkan 8 lapisan yang terdiri
+        dari 1 <span>convolutional layer</span>, 1 <span>pooling layer</span>, 1
+        <span>LSTM layer</span>, 1 <span>dense layer</span>, dan 2
+        <span>dropout layer</span>. Pembangunan model ConvLSTM ini juga
+        memanfaatkan metode <span>Bayesian Optimization</span> untuk
+        <span>hyperparameter tuning</span>
+        guna mendapatkan kombinasi dari <span>hyperparameter</span> yang
+        optimal. Berikut merupakan gambar arsitektur model ConvLSTM yang
+        dikembangkan peneliti dalam memprediksi kekeringan di Kabupaten Deli
+        Serdang.
+      </p>
+      <img src="images/arsitektur.png" alt="" />
+    </div>
+
+    <div class="isi">
+      <h1>Hasil Evaluasi Model</h1>
+    </div>
+    <div class="fitur">
+      <p>
+        Evaluasi model ConvLSTM yang berhasil dibangun dengan
+        <span>hyperparameter</span> optimal dilakukan dengan metrik evaluasi
+        berupa <span>Mean Square Error</span> (MSE),
+        <span>Mean Absolute Error</span> (MAE),
+        <span>Mean Absolute Percentage Error</span> (MAPE), dan Koefisien
+        Determinasi (<span>R-Squared</span>). Hasil evaluasi menunjukkan bahwa
+        model ConvLSTM yang dikembangkan peneliti memberikan performa terbaik
+        dibandingkan model <span>deep learning</span> lainnya pada kedua
+        dataset, sehingga model ini akan digunakan untuk memprediksi kekeringan
+        di Kabupaten Deli Serdang pada tahun 2024.
+      </p>
+      <img src="images/eval-1.png" alt="" />
+      <img src="images/eval-2.png" alt="" />
+    </div>
+
+    <div class="isi">
+      <h1>Pemetaan Hasil Prediksi Kekeringan Tahun 2024</h1>
+    </div>
+    <div class="fitur">
+      <p>
+        Hasil prediksi kekeringan di Kabupaten Deli Serdang tahun 2024 dengan
+        model ConvLSTM terbaik berupa SPI di titik centroid pada setiap grid 500
+        x 500m. Nilai SPI tersebut kemudian diinterpolasi menggunakan metode
+        <span>Inverse Distance Weighted</span> (IDW) pada
+        <span>software</span> QGIS. Visualisasi spasial berupa pemetaan wilayah
+        kekeringan dengan lima kategori dapat dilihat pada gambar di bawah.
+      </p>
+      <img src="images/pemetaan.png" alt="" />
+      <p>
+        Berdasarkan gambar di atas, pemetaan kekeringan dari data
+        <span>in situ</span>, <span>remote sensing</span>, dan gabungan
+        menunjukkan perbedaan signifikan di beberapa wilayah. Interpolasi data
+        <span>in situ</span> dari tiga stasiun pengamatan yang berada pada
+        lokasi titik-titik ungu menunjukkan 50,10% wilayah mengalami kekeringan
+        sedang di barat laut hingga timur, sementara 49,90% mengalami kekeringan
+        ringan di tenggara hingga barat. Keterbatasan stasiun pengamatan
+        menyebabkan pola sebaran kekeringan yang lebih homogen di sekitar
+        stasiun. Sebaliknya, pemetaan menggunakan data
+        <span>remote sensing</span> dan gabungan menunjukkan pola kekeringan
+        yang lebih bervariasi, sehingga memberikan gambaran yang lebih detail
+        untuk prediksi tahun 2024. Pemetaan hasil prediksi dengan dataset 1
+        menunjukkan bahwa 56,12% wilayah mengalami kekeringan sedang dan 43,88%
+        lainnya mengalami kekeringan ringan. Sementara itu, pemetaan hasil
+        prediksi dengan dataset 2 menunjukkan bahwa 45,32% wilayah mengalami
+        kekeringan sedang dan 54,68% lainnya mengalami kekeringan ringan. Hasil
+        validasi dengan <span>ground truth</span> menunjukkan bahwa hasil
+        prediksi menggunakan dataset 2 yaitu indeks kekeringan tunggal berbasis
+        <span>remote sensing</span> dan indeks kekeringan gabungan paling sesuai
+        dengan kondisi aktual di lapangan dibandingkan interpolasi data
+        <span>in situ</span> dan hasil prediksi dengan data
+        <span>remote sensing</span> saja. Gabungan data <span>in situ</span> dan
+        <span>remote sensing</span> terbukti lebih efektif dalam menangkap
+        variasi spasial kekeringan secara komprehensif.
+      </p>
+    </div>
+
+    <!-- footer section starts  -->
+    <div class="footer">
+      <h3 class="credit">
+        created by 222112286@stis.ac.id all rights reserved.
+      </h3>
+    </div>
+
+    <!-- Feather Icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- Java script -->
+    <script src="js/JavaScript.js"></script>
+  </body>
+</html>
